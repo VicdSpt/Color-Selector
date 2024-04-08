@@ -1,0 +1,126 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  padding: clamp(20px, 20vw, 200px) 20px 0;
+}
+
+.container{
+  max-width: 400Px;
+  margin: 0 auto;
+}
+
+.input-group{
+  display: flex;
+  width: 100%;
+  border-radius: 15px;
+  outline: 2px solid white;
+  margin: 15px 0;
+  font-weight: bold;
+  position: relative;
+}
+
+.input-group input{
+  outline: none;
+  cursor: pointer;
+}
+
+.input-group label{
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 22px;
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+input[type="color"]{
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+}
+
+.range-group {
+  margin: 45px 0;
+}
+
+.range-group label{
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 5px;
+  max-width: 180px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+input[type="range"]{
+  margin-top: 15px;
+  width: 100%;
+}
+
+.buttons-container{
+  display: flex;
+  justify-content: center;
+}
+
+.buttons-container button{
+  font-size: 20px;
+  min-width: 150px;
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  border: 1px solid black;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+.random-btn{
+  margin-left: 50px;
+}
+
+.copy-btn {
+  position: relative;
+}
+.copy-btn::after {
+  content: "Copié !";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  background: #f1f1f1;
+  bottom: -75%;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  white-space: nowrap;
+  opacity: 0;
+}
+.copy-btn.active::after {
+  animation: fade-out 1s ease-out forwards;
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+}
+
